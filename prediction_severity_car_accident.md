@@ -1,15 +1,20 @@
 # Predicting the Severity of Car Accident
 
 ## 1. Introduction
-With the development of high technology, there are many software companies started focusing on AI field. We already have some mature navigation software either for GPS devices, or mobile application connecting to vehicles. Imagine if we are going to drive to another city to visit your friend, before you start driving, check in the navigation tool that from start to destination place, based on the weather, road condition, light condition etc. Imaging there is an mobile app that can predict the severity of an incident in a certain circumstance and dynamically adjust the data transations on location basis. it will somehow help everyone avoid the injure tragic happening by avoiding one or more of the factors.
 
 ### 1.1 Background
-Let's look at the data result from Seattle city car accident report, 
+With the development of high technology, there are many software companies started focusing on AI field. We already have some mature navigation software either for GPS devices, or mobile application and others that can connect to vehicles. Imagine if we are going to drive to another city to visit our friend, before we start driving, check on the navigation tool from which it can provide an overall driving conditions based on the weather, road condition, light condition etc. It can predict the severity of an incident in a certain circumstance and dynamically adjust the data transations on location basis during the driving. This will somehow help everyone avoid the injure tragic happening by avoiding one or more of the factors.
+
 ### 1.2 Problem
+Driving a car can speed up the time to arrive a place, it can help people moving faster, moreover it also provides a lot of job opportunities. At the same time, driving safe also becomes a improtant topic to community.
+This project aims to predict the severity of car accident based on the surrounding circumstance, and find out the factors that most determine the severity.
 
 ### 1.3 Interest
+When a car is close to a place that satisfies the factors that ever lead a historical accident, it can push a message to warn the driver or passage who is using the navigation tool. Also for some organization or community, goverment, can provide a warning sign or notice to warn drivers to pay attention to avoid the accident.
 
 ## 2. Data visualization and pre-processing
+
+
 
 ### 2.1 Data sources
 
