@@ -80,11 +80,11 @@ and also drop the rows that has empty values.
 As a result, the dataset becomes 187630 rows × 5 columns format so far.
 
 ## 3. Exploratory Data Analysis
-The severity only have 2 values, `1- Property Damage Only Collision` and `2- Injury Collision`. However, after indepth data analysis, I found out that `SEVERITYCODE` has 3 values, `ADDRTYPE` has 6 values, `ROADCOND` has 7 values, `LIGHTCOND` has 4 values, `INCDATE` it's not datetime type. By doing the following commands, I found out the values for each columns.
-
-
-[imag](image\1.png)|[imag](image\1.png)|[imag](image\1.png)
-
+The severity only have 2 values, `1- Property Damage Only Collision` and `2- Injury Collision`. However, after indepth data analysis, I found out that `SEVERITYCODE` has 3 values, `ADDRTYPE` has 6 values, `ROADCOND` has 7 values, `LIGHTCOND` has 4 values, `INCDATE` it's not datetime type. By doing the following commands, I found out the values for each columns. 
+Image1|Image2|Image3
+-|-|-
+[<img src="images/1.png">|<img src="images/2.png">|<img src="images/3.png">
+Most of the accident happened on block|Dry and Wet road confition has more accident|Daylight is the top 1 compare to othres.
 
 
 ### 3.1. Calculation of target variable
