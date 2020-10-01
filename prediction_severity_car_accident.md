@@ -80,20 +80,80 @@ and also drop the rows that has empty values.
 As a result, the dataset becomes 187630 rows × 5 columns format so far.
 
 ## 3. Exploratory Data Analysis
-The severity only have 2 values, `1- Property Damage Only Collision` and `2- Injury Collision`. However, after indepth data analysis, I found out that `SEVERITYCODE` has 3 values, `ADDRTYPE` has 6 values, `ROADCOND` has 7 values, `LIGHTCOND` has 4 values, `INCDATE` it's not datetime type. By doing the following commands, I found out the values for each columns. 
+
+### 3.1. Calculation of target variable
+The severity only have 2 values, `1- Property Damage Only Collision` and `2- Injury Collision`. However, after indepth data analysis, I found out that `SEVERITYCODE` has 3 values, `ADDRTYPE` has 3 values, `ROADCOND` has 9 values, `LIGHTCOND` has 9 values, `INCDATE` it's not datetime type. I decided frop the `INCDATE` column since it's not contribute much to the calculation of target variable.
+
+
+### 3.2 Relationship between SEVERITYCODE and `ADDRTYPE`,`ROADCOND` and `LIGHTCOND`
+By doing the following commands, I found out the values for each columns. 
 Image1|Image2|Image3
 -|-|-
 [<img src="images/1.png">|<img src="images/2.png">|<img src="images/3.png">
 Most of the accident happened on block|Dry and Wet road confition has more accident|Daylight is the top 1 compare to othres.
 
+`Block` has the most accident, however `Intersection` has the most `Serverity=2` accident (42%), `Alley` has the most `Sererity=1` accident (89%).
+```
+ADDRTYPE      SEVERITYCODE
+Alley         1               0.890812
+              2               0.109188
+Block         1               0.762885
+              2               0.237115
+Intersection  1               0.572476
+              2               0.427524
+Name: SEVERITYCODE, dtype: float64
+```
+In the known reason list, `Snow/Slush` has the most accident `Severity = 1` (69%), Oil has the most `Severiy=2` (37%)
+```
+ROADCOND        SEVERITYCODE
+Dry             1               0.678227
+                2               0.321773
+Ice             1               0.774194
+                2               0.225806
+Oil             1               0.625000
+                2               0.375000
+Other           1               0.674242
+                2               0.325758
+Sand/Mud/Dirt   1               0.693333
+                2               0.306667
+Snow/Slush      1               0.833665
+                2               0.166335
+Standing Water  1               0.739130
+                2               0.260870
+Unknown         1               0.950325
+                2               0.049675
+Wet             1               0.668134
+                2               0.331866
+Name: SEVERITYCODE, dtype: float64
+```
+For Light condition column, expected result was that `Dark - No Street Lights` has the most `Severity=1` cases, `Dark - Unknown Lighting` has the most `Severity=2` cases.
+```
+LIGHTCOND                 SEVERITYCODE
+Dark - No Street Lights   1               0.782694
+                          2               0.217306
+Dark - Street Lights Off  1               0.736447
+                          2               0.263553
+Dark - Street Lights On   1               0.701589
+                          2               0.298411
+Dark - Unknown Lighting   1               0.636364
+                          2               0.363636
+Dawn                      1               0.670663
+                          2               0.329337
+Daylight                  1               0.668116
+                          2               0.331884
+Dusk                      1               0.670620
+                          2               0.329380
+Other                     1               0.778723
+                          2               0.221277
+Unknown                   1               0.955095
+                          2               0.044905
+Name: SEVERITYCODE, dtype: float64
+```
 
-### 3.1. Calculation of target variable
 
-### 3.2 Relationship between improvement and age
+### 3.3 Convert Categorical features to numerical values
 
-### 3.3 Relationship between improvement and age
 
-### 3.4 Relationship between improvement and age
 
 ## 4. Predictive Modeling
 ### 4.1 Regression models
