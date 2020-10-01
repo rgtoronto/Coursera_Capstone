@@ -211,8 +211,25 @@ array([[ 1.53153084, -0.06223095, -1.36876932,  1.41129279, -1.33213439,
 There are two types of models, regression and classification. Regression models is to predict the continous target data, it's not fit this project.
 Classification models focus on the probabilities of Severity level will be. The underlying algorithms are similar between regression and classification models, but various people may have different pereference. Therefore, in this study, I choose to use all four kind of classification method, compared the results and find out the best model.
 ### 4.1 Classification models
+A supervised machine learning algorithm is one that relies on labelled input data to learn a function that produces an appropriate output when given unlabeled data. 
 #### 4.1.1 K Nearest Neighbor(KNN)
+KNN can be used in both regression and classification predictive problems. However, to my understanding, it’s mostly used in classification since it fairs across all parameters evaluated when determining the usability of a technique.  
+
+I first split the filtered data into train and test to find the best k.
+```
+Train set: (136271, 18) (136271,)
+Test set: (58402, 18) (58402,)
+```
+By dividing dataset to training set and test set, it actually didn't get the output result for this method.
+It somehow lead me to conclude the following:
+- KNN is not good for heavy data, the prediction stage might be slow or even can running out of memory
+- KNN may requires more memory compared to others since it needs to save all training data duirng run time
+- KNN is an expensive method at least it needs more memory
+
 #### 4.1.2 Decision Tree
+
+Same, I split the filterd data into train set and test set.
+
 #### 4.1.3 Supported Vector Tree
 #### 4.1.4 Logistic Regression
 
