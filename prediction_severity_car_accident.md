@@ -71,9 +71,21 @@ Also I quickly check on the `SERVERITYCODE`, found the data also is balanced. Th
 2     58188
 Name: SEVERITYCODE, dtype: int64
 ```
+
 ### 2.3 Feature Selection
+Based on the observation on the raw data, I decided to select few valuable columns for severity prediction.
+`df = df[['SEVERITYCODE','ADDRTYPE','ROADCOND','LIGHTCOND','INCDATE']].copy()`
+and also drop the rows that has empty values.
+`df.dropna()`
+As a result, the dataset becomes 187630 rows × 5 columns format so far.
 
 ## 3. Exploratory Data Analysis
+The severity only have 2 values, `1- Property Damage Only Collision` and `2- Injury Collision`. However, after indepth data analysis, I found out that `SEVERITYCODE` has 3 values, `ADDRTYPE` has 6 values, `ROADCOND` has 7 values, `LIGHTCOND` has 4 values, `INCDATE` it's not datetime type. By doing the following commands, I found out the values for each columns.
+
+
+[imag](image\1.png)|[imag](image\1.png)|[imag](image\1.png)
+
+
 
 ### 3.1. Calculation of target variable
 
