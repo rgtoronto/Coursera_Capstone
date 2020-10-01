@@ -150,12 +150,65 @@ Unknown                   1               0.955095
 Name: SEVERITYCODE, dtype: float64
 ```
 
-
 ### 3.3 Convert Categorical features to numerical values
+Based on previous analysis, I decided to convert the categorical features to numerical values, by doing this, we basically normalize all the data.
+The final dataset becomes 187630 rows x 21 columns, we can see the sample image below:
 
+I chose to drop the `Unknow` and `Other` columns since they are not providing any useful information.
 
-
+Till now, it concluded the feature selections as image below:
+```
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 194673 entries, 0 to 194672
+Data columns (total 21 columns):
+SEVERITYCODE                194673 non-null int64
+ADDRTYPE                    192747 non-null object
+ROADCOND                    189661 non-null object
+LIGHTCOND                   189503 non-null object
+Alley                       194673 non-null uint8
+Block                       194673 non-null uint8
+Intersection                194673 non-null uint8
+Dry                         194673 non-null uint8
+Ice                         194673 non-null uint8
+Oil                         194673 non-null uint8
+Sand/Mud/Dirt               194673 non-null uint8
+Snow/Slush                  194673 non-null uint8
+Standing Water              194673 non-null uint8
+Wet                         194673 non-null uint8
+Dark - No Street Lights     194673 non-null uint8
+Dark - Street Lights Off    194673 non-null uint8
+Dark - Street Lights On     194673 non-null uint8
+Dark - Unknown Lighting     194673 non-null uint8
+Dawn                        194673 non-null uint8
+Daylight                    194673 non-null uint8
+Dusk                        194673 non-null uint8
+dtypes: int64(1), object(3), uint8(17)
+memory usage: 9.1+ MB
+```
+```
+array([[ 1.53153084, -0.06223095, -1.36876932,  1.41129279, -1.33213439,
+        -0.07905204, -0.01813462, -0.01963186, -0.07200071, -0.02431221,
+         1.76085874, -0.08920831, -0.07872239, -0.576075  , -0.00751719,
+        -0.1141037 ,  0.82233559, -0.17682024],
+       [-0.65294147, -0.06223095,  0.73058329, -0.70857019, -1.33213439,
+        -0.07905204, -0.01813462, -0.01963186, -0.07200071, -0.02431221,
+         1.76085874, -0.08920831, -0.07872239,  1.73588509, -0.00751719,
+        -0.1141037 , -1.21604855, -0.17682024],
+       [-0.65294147, -0.06223095,  0.73058329, -0.70857019,  0.75067501,
+        -0.07905204, -0.01813462, -0.01963186, -0.07200071, -0.02431221,
+        -0.56790473, -0.08920831, -0.07872239, -0.576075  , -0.00751719,
+        -0.1141037 ,  0.82233559, -0.17682024],
+       [-0.65294147, -0.06223095,  0.73058329, -0.70857019,  0.75067501,
+        -0.07905204, -0.01813462, -0.01963186, -0.07200071, -0.02431221,
+        -0.56790473, -0.08920831, -0.07872239, -0.576075  , -0.00751719,
+        -0.1141037 ,  0.82233559, -0.17682024],
+       [ 1.53153084, -0.06223095, -1.36876932,  1.41129279, -1.33213439,
+        -0.07905204, -0.01813462, -0.01963186, -0.07200071, -0.02431221,
+         1.76085874, -0.08920831, -0.07872239, -0.576075  , -0.00751719,
+        -0.1141037 ,  0.82233559, -0.17682024]])]
+```
 ## 4. Predictive Modeling
+
 ### 4.1 Regression models
 #### 4.1.1 
 #### 4.1.2 
