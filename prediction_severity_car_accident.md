@@ -208,12 +208,13 @@ array([[ 1.53153084, -0.06223095, -1.36876932,  1.41129279, -1.33213439,
         -0.1141037 ,  0.82233559, -0.17682024]])]
 ```
 ## 4. Predictive Modeling
-
-### 4.1 Regression models
-#### 4.1.1 
-#### 4.1.2 
-#### 4.1.3
-#### 4.1.4
+There are two types of models, regression and classification. Regression models is to predict the continous target data, it's not fit this project.
+Classification models focus on the probabilities of Severity level will be. The underlying algorithms are similar between regression and classification models, but various people may have different pereference. Therefore, in this study, I choose to use all four kind of classification method, compared the results and find out the best model.
+### 4.1 Classification models
+#### 4.1.1 K Nearest Neighbor(KNN)
+#### 4.1.2 Decision Tree
+#### 4.1.3 Supported Vector Tree
+#### 4.1.4 Logistic Regression
 
 ## 5. Conclusions
 
