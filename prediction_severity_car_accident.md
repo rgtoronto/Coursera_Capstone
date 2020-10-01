@@ -1,23 +1,10 @@
 # Predicting the Severity of Car Accident
 
 ## 1. Introduction
-Seattle city as an example of how to deal with
-the accidents data.
+With the development of high technology, there are many software companies started focusing on AI field. We already have some mature navigation software either for GPS devices, or mobile application connecting to vehicles. Imagine if we are going to drive to another city to visit your friend, before you start driving, check in the navigation tool that from start to destination place, based on the weather, road condition, light condition etc. Imaging there is an mobile app that can predict the severity of an incident in a certain circumstance and dynamically adjust the data transations on location basis. it will somehow help everyone avoid the injure tragic happening by avoiding one or more of the factors.
+
 ### 1.1 Background
-you are driving to another city for work or
-to visit some friends. It is rainy and windy,
-and on the way, you come across a
-terrible traffic jam on the other side of the highway. Long lines of cars barely moving. As you keep driving, police car start appearing from afar shutting down the highway. Oh, it is an accident
-and there's a helicopter transporting the ones involved in the crash to the
-nearest hospital. They must be in
-critical condition for all of this to be happening. Now, wouldn't it be
-great if there is something in place
-that could warn you, given the weather and
-the road conditions about the possibility of you getting into a car accident
-and how severe it would be, so that you would
-drive more carefully or even change your travel
-if you are able to. Well, this is exactly
-what you will be working on in this course.
+Let's look at the data result from Seattle city car accident report, 
 ### 1.2 Problem
 
 ### 1.3 Interest
