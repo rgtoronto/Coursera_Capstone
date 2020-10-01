@@ -14,9 +14,8 @@ When a car is close to a place that satisfies the factors that ever lead a histo
 
 ## 2. Data visualization and pre-processing
 
-
-
 ### 2.1 Data sources
+For this project, we are using the car accident report from Ceattle city from 2004-01-01 to 2019-05-20, it listed out 194673 records, and 37 columns in total. In this dataset, it decribed the accident severity, address type, road condition, light condition, coordinates etc. I noticed there are missing values for certain columns, this will be covered in data cleaning section.
 
 ### 2.2 Data cleaning
 
