@@ -250,6 +250,7 @@ accuracy classification score| K Nearest Neighbor(KNN)|Decision Tree|Supported V
 Jaccard score|x|1.0|0.9999486323359446|1.0|
 log-loss score|x|x|x|0.0035982614481627918|
 f1-score score|x|1.0|0.9999486310391947|1.0|
+
 chart 5.1
 ## 5. Conclusions
 From this study, firstly, I observed the severity values, and found out they are unevenly distributed; moreover, I respectively analyzed the relationship between `Severity` and `road condition`, `address type` and `light condition`, leant that how the different independent features affect the severity targe value. At the same time, it also brings me to a stage that how we should clean some dummy data that was thinking useful than actually didn't contribute much. Finally, the models can be very helpful and valuable to help people stay safe and enjoy driving.
