@@ -227,12 +227,28 @@ It somehow lead me to conclude the following:
 - KNN is an expensive method at least it needs more memory
 
 #### 4.1.2 Decision Tree
+Decision tree is very useful in machine learning and popular is because it's easy to understand and interpret, it also need less dta preparation.
 
-Same, I split the filterd data into train set and test set.
+Also did the same, I divided data into 2 sets, training set and test set. I got the really impressive result for this:
+```
+DecisionTrees's Accuracy:  1.0
+DecisionTrees's Jaccard score is:  1.0
+DecisionTrees's f1-score is:  1.0
+```
 
 #### 4.1.3 Supported Vector Tree
+SVM's f1-score is:  0.9999486310391947
+SVM's Jaccard score is:  0.9999486323359446
 #### 4.1.4 Logistic Regression
-
+Train set: (155738, 18) (155738,)
+Test set: (38935, 18) (38935,)
+Logistic Regression Jaccard score is: 1.0
+Logistic Regression log-loss score is: 0.0035982614481627918
+Logistic Regression f1-score score is: 1.0
 ## 5. Conclusions
+accuracy classification score| K Nearest Neighbor(KNN)|Decision Tree|Supported Vector Tree|Logistic Regression
+-|-|-|-|-
+Jaccard score|x|1.0|0.9999486323359446|1.0|
+log-loss score|x|1.0|x|0.0035982614481627918|
+f1-score score|x|1.0|0.9999486310391947|1.0|
 
-## 6. Future Direction
