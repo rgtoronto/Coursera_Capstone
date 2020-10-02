@@ -84,7 +84,6 @@ As a result, the dataset becomes 187630 rows × 5 columns format so far.
 ### 3.1. Calculation of target variable
 The severity only have 2 values, `1- Property Damage Only Collision` and `2- Injury Collision`. However, after indepth data analysis, I found out that `SEVERITYCODE` has 3 values, `ADDRTYPE` has 3 values, `ROADCOND` has 9 values, `LIGHTCOND` has 9 values, `INCDATE` it's not datetime type. I decided frop the `INCDATE` column since it's not contribute much to the calculation of target variable.
 
-
 ### 3.2 Relationship between SEVERITYCODE and `ADDRTYPE`,`ROADCOND` and `LIGHTCOND`
 By doing the following commands, I found out the values for each columns. 
 Image1|Image2|Image3
@@ -207,11 +206,14 @@ array([[ 1.53153084, -0.06223095, -1.36876932,  1.41129279, -1.33213439,
          1.76085874, -0.08920831, -0.07872239, -0.576075  , -0.00751719,
         -0.1141037 ,  0.82233559, -0.17682024]])]
 ```
+
 ## 4. Predictive Modeling
 There are two types of models, regression and classification. Regression models is to predict the continous target data, it's not fit this project.
 Classification models focus on the probabilities of Severity level will be. The underlying algorithms are similar between regression and classification models, but various people may have different pereference. Therefore, in this study, I choose to use all four kind of classification method, compared the results and find out the best model.
+
 ### 4.1 Classification models
 A supervised machine learning algorithm is one that relies on labelled input data to learn a function that produces an appropriate output when given unlabeled data. 
+
 #### 4.1.1 K Nearest Neighbor(KNN)
 KNN can be used in both regression and classification predictive problems. However, to my understanding, it’s mostly used in classification since it fairs across all parameters evaluated when determining the usability of a technique.  
 
@@ -235,6 +237,12 @@ DecisionTrees's Accuracy:  1.0
 DecisionTrees's Jaccard score is:  1.0
 DecisionTrees's f1-score is:  1.0
 ```
+ 
+Based on the result, I can tell that:
+- Decision tree is easy to understand and interpret, it's very close to human decision-making process.
+- It can work with numerical and categorical features.
+- It just need a little data preprocessing whereas KNN needs one-hot encoding
+- Unimportant features will not influence much to the result and it also doesn't affect the quality much.
 
 #### 4.1.3 Supported Vector Tree
 SVM's f1-score is:  0.9999486310391947
