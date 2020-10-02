@@ -3,21 +3,23 @@
 ## 1. Introduction
 
 ### 1.1 Background
-With the development of high technology, there are many software companies started focusing on AI field. We already have some mature navigation software either for GPS devices, or mobile application and others that can connect to vehicles. Imagine if we are going to drive to another city to visit our friend, before we start driving, check on the navigation tool from which it can provide an overall driving conditions based on the weather, road condition, light condition etc. It can predict the severity of an incident in a certain circumstance and dynamically adjust the data transations on location basis during the driving. This will somehow help everyone avoid the injure tragic happening by avoiding one or more of the factors.
+With the development of high technology, there are many software companies started focusing on AI field. We already have some mature navigation software either for GPS devices, or mobile application and others that can connect to vehicles. Imagine if we are going to drive to another city to visit our friend. before we start driving, checking on the navigation tool from which it can provide an overall driving conditions based on the weather, road condition, light condition etc. It can predict the severity of an incident in a certain circumstance and dynamically adjust the data transations on location basis during the driving. This will somehow help everyone avoid the injure tragic happening by avoiding one or more of the factors.
 
 ### 1.2 Problem
 Driving a car can speed up the time to arrive a place, it can help people moving faster, moreover it also provides a lot of job opportunities. At the same time, driving safe also becomes a improtant topic to community.
-This project aims to predict the severity of car accident based on the surrounding circumstance, and find out the factors that most determine the severity.
+This project aims to predict the severity of car accident based on the surrounding circumstance, and find out the factors that most determines the severity.
 
 ### 1.3 Interest
-When a car is close to a place that satisfies the factors that ever lead a historical accident, it can push a message to warn the driver or passage who is using the navigation tool. Also for some organization or community, goverment, can provide a warning sign or notice to warn drivers to pay attention to avoid the accident.
+When a car is close to a place that satisfies the factors that ever had a historical accident, it can push a message to warn the driver or passage who is using the navigation tool. Also for some organization or community, goverment, can provide a warning sign or notice to warn drivers to pay attention to avoid the accident.
 
 ## 2. Data visualization and pre-processing
 
 ### 2.1 Data sources
-For this project, we are using the car accident report from Ceattle city from 2004-01-01 to 2019-05-20, it listed out 194673 records, and 37 columns in total. In this dataset, it decribed the accident severity, address type, road condition, light condition, coordinates etc. I noticed there are missing values for certain columns, this will be covered in data cleaning section.
+
+For this project, we are using the car accident report from Seattle city from `2004-01-01` to `2019-05-20`, it listed out `194673` records, and `37` columns in total. In this dataset, it decribed the accident severity, address type, road condition, light condition, coordinates etc. I noticed there are missing values for certain columns, this will be covered in data cleaning section.
 
 ### 2.2 Data Cleaning
+
 The data was downloaded from the provided [link](https://s3.us.cloud-object-storage.appdomain.cloud/cf-courses-data/CognitiveClass/DP0701EN/version-2/Data-Collisions.csv). As I mentioned in last section, there are missing values in some volumns, if we do the following command, we can see 13 columns match this cretaris. they are `X`, `Y`, `INTKEY`, `LOCATION`, `EXCEPTRSNCODE`, `EXCEPTRSNDESC`, `COLLISIONTYPE`, `JUNCTIONTYPE`, `INATTENTIONIND`, `SDOTCOLNUM`, `SPEEDING`, `ST_COLCODE`, `ST_COLDESC`.
 ```
 df.info()
@@ -65,7 +67,7 @@ HITPARKEDCAR      194673 non-null object
 dtypes: float64(4), int64(12), object(22)
 memory usage: 56.4+ MB
 ```
-Also I quickly check on the `SERVERITYCODE`, found the data also is balanced. This actually lead me to use classification as supervised deta modeling method.
+Also I quickly check on the `SERVERITYCODE`, found the data also is uneven distributed. 
 ```
 1    136485
 2     58188
@@ -73,16 +75,19 @@ Name: SEVERITYCODE, dtype: int64
 ```
 
 ### 2.3 Feature Selection
-Based on the observation on the raw data, I decided to select few valuable columns for severity prediction.
+Based on the observation on the raw data, I decided to select few valuable columns for severity prediction. At first, I chose the following columns:
 `df = df[['SEVERITYCODE','ADDRTYPE','ROADCOND','LIGHTCOND','INCDATE']].copy()`
-and also drop the rows that has empty values.
+and then cleaned the rows that has empty values.
 `df.dropna()`
-As a result, the dataset becomes 187630 rows × 5 columns format so far.
+As a result, the dataset becomes `187630` rows × `5` columns format so far.
 
 ## 3. Exploratory Data Analysis
 
 ### 3.1. Calculation of target variable
-The severity only have 2 values, `1- Property Damage Only Collision` and `2- Injury Collision`. However, after indepth data analysis, I found out that `SEVERITYCODE` has 3 values, `ADDRTYPE` has 3 values, `ROADCOND` has 9 values, `LIGHTCOND` has 9 values, `INCDATE` it's not datetime type. I decided frop the `INCDATE` column since it's not contribute much to the calculation of target variable.
+The severity only have 2 values, 
+`1- Property Damage Only Collision` 
+`2- Injury Collision`. 
+However, after indepth data analysis, I found out that `ADDRTYPE` has 3 enum values, `ROADCOND` has 9 enum values, `LIGHTCOND` has 9 enum values, I decided drop the `INCDATE` column since from now on, I realized that it's not contribute much to the calculation of target variable.
 
 ### 3.2 Relationship between SEVERITYCODE and `ADDRTYPE`,`ROADCOND` and `LIGHTCOND`
 By doing the following commands, I found out the values for each columns. 
@@ -150,8 +155,8 @@ Name: SEVERITYCODE, dtype: float64
 ```
 
 ### 3.3 Convert Categorical features to numerical values
-Based on previous analysis, I decided to convert the categorical features to numerical values, by doing this, we basically normalize all the data.
-The final dataset becomes 187630 rows x 21 columns, we can see the sample image below:
+Based on previous analysis, I decided to convert the categorical features to numerical values, by doing this, I basically normalize all the data.
+The final dataset becomes `187630` rows x `21` columns, we can see the sample image below:
 
 I chose to drop the `Unknow` and `Other` columns since they are not providing any useful information.
 
@@ -208,14 +213,14 @@ array([[ 1.53153084, -0.06223095, -1.36876932,  1.41129279, -1.33213439,
 ```
 
 ## 4. Predictive Modeling
-There are two types of models, regression and classification. Regression models is to predict the continous target data, it's not fit this project.
+There are two types of models, regression and classification. Regression models is to predict the continous target data, I think classicication is more fit this project.
 Classification models focus on the probabilities of Severity level will be. The underlying algorithms are similar between regression and classification models, but various people may have different pereference. Therefore, in this study, I choose to use all four kind of classification method, compared the results and find out the best model.
 
 ### 4.1 Classification models
-A supervised machine learning algorithm is one that relies on labelled input data to learn a function that produces an appropriate output when given unlabeled data. 
+A supervised machine learning algorithm is one that relies on labelled input data to learn a function that produces an appropriate output when given unlabeled data. Classification is a supervised learning approach which can be thought of as a means of categorizing or classifying some unknown items into a discrete set of classes. It includes `decision trees`, `naive bayes`, `linear discriminant analysis`, `k-nearest neighbor`, `logistic regression`, `neural networks`, and `support vector machines`. There are many types of classification algorithms. I will only use `k-nearest neighbor`, `decision trees`, `logistic regression` and `support vector machines` in this project.
 
 #### 4.1.1 K Nearest Neighbor(KNN)
-KNN can be used in both regression and classification predictive problems. However, to my understanding, it’s mostly used in classification since it fairs across all parameters evaluated when determining the usability of a technique.  
+K Nearest Neighbor(KNN) can be used in both regression and classification predictive problems. However, to my understanding, it’s mostly used in classification since it fairs across all parameters evaluated when determining the usability of a technique.  
 
 I first split the filtered data into train and test to find the best k.
 ```
