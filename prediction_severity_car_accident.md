@@ -229,8 +229,7 @@ It somehow lead me to conclude the following:
 - KNN is an expensive method at least it needs more memory
 
 #### 4.1.2 Decision Tree
-Decision tree is very useful in machine learning and popular is because it's easy to understand and interpret, it also need less dta preparation.
-
+Decision tree is the simplest method, it can be used for both regression and classification problems. It's very useful in machine learning and popular.
 Also did the same, I divided data into 2 sets, training set and test set. I got the really impressive result for this:
 ```
 DecisionTrees's Accuracy:  1.0
@@ -245,18 +244,26 @@ Based on the result, I can tell that:
 - Unimportant features will not influence much to the result and it also doesn't affect the quality much.
 
 #### 4.1.3 Supported Vector Tree
+Supported vector tree is another tree-based techniques and popular tool to build prediction models.
+In this car accident result, we have 2 categories in an x-y plane with points overlapping each other, and it's not easy for us to find a straight line that can perfectly separate them. When using this way, I noticed that the model actually can get a very good prediction result.
+```
 SVM's f1-score is:  0.9999486310391947
 SVM's Jaccard score is:  0.9999486323359446
+```
+
 #### 4.1.4 Logistic Regression
-Train set: (155738, 18) (155738,)
-Test set: (38935, 18) (38935,)
-Logistic Regression Jaccard score is: 1.0
-Logistic Regression log-loss score is: 0.0035982614481627918
-Logistic Regression f1-score score is: 1.0
+Logistic regression is a statistical and machine learning technique for classifying records of a dataset based on the values of the input fields. In logistic regression, I use multiple independent variables such as `SEVERITYCODE`,`ADDRTYPE`, `ROADCOND` and `LIGHTCOND` to predict the car accident severity.
+
+From the result, 
+- logistic regression is pretty efficient in terms of time and memory requirement, unlike KNN.
+- It's Convenient to get probability scores
+- It doesn’t handle scale number of categorical features well
+
 ## 5. Conclusions
+From the chart 5.1 below, we can see that 
 accuracy classification score| K Nearest Neighbor(KNN)|Decision Tree|Supported Vector Tree|Logistic Regression
 -|-|-|-|-
 Jaccard score|x|1.0|0.9999486323359446|1.0|
-log-loss score|x|1.0|x|0.0035982614481627918|
+log-loss score|x|x|x|0.0035982614481627918|
 f1-score score|x|1.0|0.9999486310391947|1.0|
 
