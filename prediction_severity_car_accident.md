@@ -259,6 +259,10 @@ SVM's Jaccard score is:  0.9999486323359446
 #### 4.1.4 Logistic Regression
 Logistic regression is a statistical and machine learning technique for classifying records of a dataset based on the values of the input fields. In logistic regression, I use multiple independent variables such as `ADDRTYPE`, `ROADCOND` and `LIGHTCOND` to predict the car accident severity.
 
+I also used another way of looking at accuracy of classifier - confusion matrix.
+The Jacard score is 1.0. From confustion matrix, we can see that from the first row. The first row is for accidents whose actual churn value in test set is 1. As we can calculate, out of 27425 customers, the churn value of 27425 of them is 1. They all meet the predicted value.
+
+<img src="images/6.png">
 From the result, 
 - logistic regression is pretty efficient in terms of time and memory requirement, unlike KNN.
 - It's Convenient to get probability scores
