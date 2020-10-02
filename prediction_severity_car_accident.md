@@ -259,11 +259,20 @@ From the result,
 - It's Convenient to get probability scores
 - It doesn’t handle scale number of categorical features well
 
-## 5. Conclusions
-From the chart 5.1 below, we can see that 
+#### Result Analysis
+In this study, From the chart 5.1 below, we can see that 
 accuracy classification score| K Nearest Neighbor(KNN)|Decision Tree|Supported Vector Tree|Logistic Regression
 -|-|-|-|-
 Jaccard score|x|1.0|0.9999486323359446|1.0|
 log-loss score|x|x|x|0.0035982614481627918|
 f1-score score|x|1.0|0.9999486310391947|1.0|
+
+## 5. Conclusions
+From this study, firstly, I observed the severity values, and found out they are uneven distributed; moreover, I respectively analysized the relationship between `Severeity` and `road condition`, `address type` and `light condition`, leant that how the different independent features affect the severity targe value. At same time, it also bring me to a stage that how we should clean some dummy data that was thinking useful then actually didn't contribute much. Finally, the models can be very helpful and valuable to help people stay safe and enjoy the driving.
+
+## 6 Future Direction
+This report is almost ending, but this is just a good start, the machine learning field is wide and more areas we can explore on. For exmaple, in this project, we just predict the severity based on the pre-condition is there was an accident already happened. It's not true when the conditions all meet, there is difinetly a car accident will be happening. 
+
+Also, for KNN method, I could improve the model to at least get the better K, to get the result.
+
 
