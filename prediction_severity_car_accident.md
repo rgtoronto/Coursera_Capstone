@@ -3,7 +3,7 @@
 ## 1. Introduction
 
 ### 1.1 Background
-With the development of high technology, there are many software companies started focusing on the AI field. We already have some mature navigation software either for GPS devices, or mobile application and others that can connect to vehicles. Imagine if we are going to drive to another city to visit our friend. before we start driving, checking on the navigation tool from which it can provide overall driving conditions based on the weather, road condition, light condition etc. It can predict the severity of an incident in a certain circumstance and dynamically adjust the data transactions on a location basis during the driving. This will somehow help everyone avoid the injure tragic happening by avoiding one or more of the factors.
+With the development of high technology, there are many software companies started focusing on the AI field. We already have some mature navigation software either for GPS devices, or mobile application and others that can connect to vehicles. Imagine if we are going to drive to another city to visit our friend. before we start driving, checking on the navigation tool from which it can provide overall driving conditions based on the weather, road condition, light condition etc. It can predict the severity of an incident in a certain similiar circumstance and dynamically adjust the data transactions on a location basis during the driving. This will somehow help everyone avoid the injure tragic happening by avoiding one or more of the factors.
 
 ### 1.2 Problem
 Driving a car can speed up the time to arrive at a place, it can help people moving faster, moreover, it also provides a lot of job opportunities. At the same time, driving safe also becomes an important topic for the community.
@@ -277,6 +277,6 @@ f1-score score|x|1.0|0.9999486310391947|1.0|
 From this study, firstly, I observed the severity values, and found out they are unevenly distributed; moreover, I respectively analyzed the relationship between `Severity` and `road condition`, `address type` and `light condition`, leant that how the different independent features affect the severity targe value. At the same time, it also brings me to a stage that how we should clean some dummy data that was thinking useful than actually didn't contribute much. Finally, the models can be very helpful and valuable to help people stay safe and enjoy driving.
 
 ## 6 Future Direction
-This report is almost ending, but this is just a good start, the machine learning field is wide and more areas we can explore on. For example, in this project, we just predict the severity based on the pre-condition is there was an accident already happened. It's not true when the conditions all meet, there is definitely a car accident will be happening.
+This report is almost ending, but this is just a good start, the machine learning field is wide and more areas we can explore on. For example, in this project, it predicts the severity based on the the historical data where the accident already happened. This also can be used to a place there was no accident happened, however can pridict the severity if it happened. It warn the driver that if the accident happen, most likely the severity would be predicted.
 
 Also, for the KNN method, I could improve the model to at least get the better K, to get the result.
