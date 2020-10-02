@@ -242,7 +242,7 @@ DecisionTrees's Jaccard score is:  1.0
 DecisionTrees's f1-score is:  1.0
 ```
  
-Based on the result, I can tell that:
+Based on the result, it concludes that:
 - Decision tree is easy to understand and interpret, it's very close to human decision-making process.
 - It can work with numerical and categorical features.
 - It just need a little data preprocessing whereas KNN needs one-hot encoding
@@ -250,14 +250,14 @@ Based on the result, I can tell that:
 
 #### 4.1.3 Supported Vector Tree
 Supported vector tree is another tree-based techniques and popular tool to build prediction models.
-In this car accident result, we have 2 categories in an x-y plane with points overlapping each other, and it's not easy for us to find a straight line that can perfectly separate them. When using this way, I noticed that the model actually can get a very good prediction result.
+In this project result, we have 2 categories in an x-y plane with points overlapping each other, and it's not easy for us to find a straight line that can perfectly separate them. When using this way, I noticed that the model actually can get a very good prediction result which was close to 1.
 ```
 SVM's f1-score is:  0.9999486310391947
 SVM's Jaccard score is:  0.9999486323359446
 ```
 
 #### 4.1.4 Logistic Regression
-Logistic regression is a statistical and machine learning technique for classifying records of a dataset based on the values of the input fields. In logistic regression, I use multiple independent variables such as `SEVERITYCODE`,`ADDRTYPE`, `ROADCOND` and `LIGHTCOND` to predict the car accident severity.
+Logistic regression is a statistical and machine learning technique for classifying records of a dataset based on the values of the input fields. In logistic regression, I use multiple independent variables such as `ADDRTYPE`, `ROADCOND` and `LIGHTCOND` to predict the car accident severity.
 
 From the result, 
 - logistic regression is pretty efficient in terms of time and memory requirement, unlike KNN.
@@ -265,7 +265,7 @@ From the result,
 - It doesn’t handle scale number of categorical features well
 
 #### Result Analysis
-In this study, From the chart 5.1 below, we can see that 
+In this study, From the chart 5.1 below, we can see that `Decision Tree` and `Logistic Regression` got the same accuracy on `Jaccard score` and `f1-score score`. For some reason, the KNN method was not display any result for this project, `Supported Vector Tree` also can get decent result.
 accuracy classification score| K Nearest Neighbor(KNN)|Decision Tree|Supported Vector Tree|Logistic Regression
 -|-|-|-|-
 Jaccard score|x|1.0|0.9999486323359446|1.0|
