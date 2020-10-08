@@ -1,5 +1,8 @@
 ### Analytic Approach
-- We classify the emails as spam and non-spam.
+- using Descriptive Analytics, study the past email history, and label the data
+- using Diagnostic Analytics, it helps understand why these emails are marked as spam and moved to spam folder
+- the two approaches above help understand the history data and label data properly
+- I will classify the emails as spam and non-spam.
 - the answer would be yes or no, we use the classification method to build the modelling
 - if yes, the incoming email will be filtered out and move to spam, otherwise, it will be delivered to the inbox.
 
