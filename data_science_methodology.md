@@ -23,8 +23,9 @@ it's ok the email data format are different, and using different structures.
   - Attachment with executable script hidden inside
   - Some hyperlink in the email body
   - The random generated sender email address
-  etc, all these could be spam
-
+  etc, all these emails could be a sample of spam
+  - when parsing the email body, we can have all these highlighted items as labelled variables, e.g. a column in final data frame, we can have 1 present yes, 0 present no in the table.
+  
 - Using plot to visualize the data, and help to understand the relationships between target vaiable and independent vaiables
   - find the meaningful columns that can determine the spam
   - get the maximum, minimum, mean values
@@ -36,11 +37,10 @@ it's ok the email data format are different, and using different structures.
   - remove the duplicated entries
   - finally create a flat table with all data merged in
   - normalize the data into a data frame
+
   
 ### Modeling and Evaluation
-- we can use different modelling method
-  - decision tree
-  - Logistic Regression
+- we can use decision tree first, if the accurency doesn't reach the expectation, we can try another one.
 - compare and evaluate the result to find the best method
   - split the data into 2 sets: training set and test set
   - compare the result and pick the best one
